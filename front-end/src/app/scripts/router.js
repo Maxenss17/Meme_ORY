@@ -9,7 +9,7 @@
     while (outlet.lastChild) {
         outlet.removeChild(outlet.lastChild);
     }
-    outlet.appendChild(template);
+        outlet.appendChild(template);
   }
 
   /**
@@ -30,7 +30,6 @@
     );
   }
   // TODO #export-router: remove this assignation
-  window.Router = Router;
 
   /**
    * Bind a component ot be displayed when the registered URL is reached.
@@ -140,3 +139,5 @@
     xhr.send();
   }
 })();
+
+export { Router };
