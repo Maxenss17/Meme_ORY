@@ -7,10 +7,10 @@
    */
   function renderTemplate(outlet, template) {
     while (outlet.lastChild) {
-      outlet.removeChild(outlet.lastChild);
+        outlet.removeChild(outlet.lastChild);
     }
     outlet.appendChild(template);
-    }
+  }
 
   /**
    * Create a new router. This router will load components into the given outlet.
