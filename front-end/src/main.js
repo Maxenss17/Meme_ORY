@@ -3,6 +3,9 @@
 // TODO #import-css: use ES side-effect imports to import styles/style.css
 
 import { Router } from "./app/scripts/router.js";
+import { GameComponent } from "./app/scripts/game.js";
+import { WelcomeComponent } from "./app/scripts/welcome.js";
+import { ScoreComponent } from "./app/scripts/score.js";
 
 const outlet = document.querySelector("#content-outlet");
 const router = new Router(outlet);
