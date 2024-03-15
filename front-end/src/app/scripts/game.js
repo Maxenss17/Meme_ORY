@@ -89,8 +89,8 @@ var CARD_TEMPLATE = ""
 
         // TODO #functional-programming: use Array.forEach() instead.
         // TODO #let-const: replace var with let.
-        for (var i in this._cards) {
-          var card = this._cards[i];
+        for (let i in this._cards) {
+          let card = this._cards[i];
           this._boardElement.appendChild(card.getElement());
 
           card.getElement().addEventListener(
