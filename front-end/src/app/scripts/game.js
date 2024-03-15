@@ -91,9 +91,14 @@ var CARD_TEMPLATE = ""
         // TODO #let-const: replace var with let.
         for (var i in this._cards) {
           var card = this._cards[i];
+          this._boardElement.appendChild(card.getElement());
 
-          // TODO #let-const: extract function _appendCard (ie: copy its body here and remove the function)
-          this._appendCard(card);
+          card.getElement().addEventListener(
+            "click",
+            function () {
+              this._flipCard(card);
+            }.bind(this)
+          );
         }
 
         this.start();
@@ -103,19 +108,6 @@ var CARD_TEMPLATE = ""
   // TODO #class: turn function into a method of GameComponent
 
   /* method GameComponent._appendCard */
-    _appendCard(card) {
-    this.card = card;
-    this._boardElement.appendChild(card.getElement());
-
-    card.getElement().addEventListener(
-      "click",
-      // TODO #arrow-function: use arrow function instead.
-      function () {
-        this._flipCard(card);
-      }.bind(this)
-    );
-};
-
   // TODO #class: turn function into a method of GameComponent
   /* method GameComponent.start */
     start() {
