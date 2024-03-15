@@ -113,14 +113,12 @@ const CARD_TEMPLATE = ""
     start() {
     this._startTime = Date.now();
     const seconds = 0;
-    // TODO #template-literals:  use template literals (backquotes)
     document.querySelector("nav .navbar-title").textContent =
-      "Player: " + this._name + ". Elapsed time: " + seconds++;
+    `Player: ${this._name}. Elapsed time: ${seconds++}`;
 
     this._timer = setInterval(() => {
-        // TODO #template-literals:  use template literals (backquotes)
-        document.querySelector("nav .navbar-title").textContent =
-          "Player: " + this._name + ". Elapsed time: " + seconds++;
+    document.querySelector("nav .navbar-title").textContent =
+    `Player: ${this._name}. Elapsed time: ${seconds++}`;
       },
       1000
     );
@@ -137,8 +135,7 @@ const CARD_TEMPLATE = ""
         ? new XMLHttpRequest()
         : new ActiveXObject("Microsoft.XMLHTTP");
 
-    // TODO #template-literals:  use template literals (backquotes)
-    xhr.open("get", environment.api.host + "/board?size=" + this._size, true);
+    xhr.open("get", `${environment.api.host}/board?size=${this._size}`, true);
 
     xhr.onreadystatechange = () => {
       let status;
@@ -168,17 +165,8 @@ const CARD_TEMPLATE = ""
     clearInterval(this._timer);
 
     setTimeout(() => {
-        // TODO #spa: replace with './#score'
         const scorePage = "./#score";
-        // TODO #template-literals:  use template literals (backquotes)
-        window.location =
-          scorePage +
-          "?name=" +
-          this._name +
-          "&size=" +
-          this._size +
-          "&time=" +
-          timeElapsedInSeconds;
+        window.location = `${scorePage}?name=${this._name}&size=${this._size}&time=${timeElapsedInSeconds}`;
       },
       750
     );

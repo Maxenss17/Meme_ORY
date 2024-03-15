@@ -41,6 +41,5 @@ import template from "../views/welcome.html";
   function _startGame(name, size) {
     // TODO #spa: replace with './#game'
     const gamePage = "./#game";
-    // TODO #template-literals:  use template literals (backquotes)
-    window.location = gamePage + "?name=" + name + "&size=" + size;
+    window.location = `${gamePage}?name=${name}&size=${size}`;
   }
