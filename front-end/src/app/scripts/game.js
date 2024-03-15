@@ -112,7 +112,7 @@ const CARD_TEMPLATE = ""
   /* method GameComponent.start */
     start() {
     this._startTime = Date.now();
-    const seconds = 0;
+    let seconds = 0;
     document.querySelector("nav .navbar-title").textContent =
     `Player: ${this._name}. Elapsed time: ${seconds++}`;
 
