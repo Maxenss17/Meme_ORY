@@ -73,9 +73,9 @@ const CARD_TEMPLATE = ""
   // TODO #class: turn function into a method of GameComponent
   /* method GameComponent.init */
     async init() {
-      
-        this._config = config;
-        this._boardElement = document.querySelector(".cards");
+
+      this._config = await this.fetchConfig();
+      this._boardElement = document.querySelector(".cards");
 
         // create cards out of the config
         this._cards = [];
