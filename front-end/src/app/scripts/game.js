@@ -72,11 +72,8 @@ const CARD_TEMPLATE = ""
   // put component in global scope, to be runnable right from the HTML.
   // TODO #class: turn function into a method of GameComponent
   /* method GameComponent.init */
-    init() {
-    // fetch the cards configuration from the server
-    this.fetchConfig(
-
-      (config) => {
+    async init() {
+      
         this._config = config;
         this._boardElement = document.querySelector(".cards");
 
@@ -85,11 +82,8 @@ const CARD_TEMPLATE = ""
         // TODO #functional-programming: use Array.map() instead.
         this._cards = this._config.ids.map(id => new CardComponent(id));
 
-        // TODO #functional-programming: use Array.forEach() instead.
-        // TODO #let-const: replace const with let.
-        
         this._cards.forEach(card => {
-          this._boardElement.appendChild(card.getElement());
+        this._boardElement.appendChild(card.getElement());
         
           card.getElement().addEventListener(
             "click",
@@ -100,8 +94,6 @@ const CARD_TEMPLATE = ""
         });
 
         this.start();
-      }
-    );
 };
   // TODO #class: turn function into a method of GameComponent
 
@@ -120,38 +112,16 @@ const CARD_TEMPLATE = ""
       },
       1000
     );
-
 };
 
   // TODO #class: turn function into a method of GameComponent
   /* method GameComponent.fetchConfig */
 
-    fetchConfig(cb) {
-    this.cb = cb;
-    const xhr =
-      typeof XMLHttpRequest != "undefined"
-        ? new XMLHttpRequest()
-        : new ActiveXObject("Microsoft.XMLHTTP");
-
-    xhr.open("get", `${environment.api.host}/board?size=${this._size}`, true);
-
-    xhr.onreadystatechange = () => {
-      let status;
-      let data;
-      // https://xhr.spec.whatwg.org/#dom-xmlhttprequest-readystate
-      if (xhr.readyState == 4) {
-        // `DONE`
-        status = xhr.status;
-        if (status == 200) {
-          data = JSON.parse(xhr.responseText);
-          cb(data);
-        } else {
-          throw new Error(status);
-        }
-      }
-    };
-    xhr.send();
-};
+  async fetchConfig() {
+    return fetch(`${environment.api.host}/board?size=${this._size}`).then(
+      (r) => r.json()
+    );
+  }
 
   // TODO #class: turn function into a method of GameComponent
   /* method GameComponent.goToScore */
