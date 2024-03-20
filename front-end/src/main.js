@@ -11,6 +11,8 @@ import { NavbarComponent } from "./app/components/navbar/navbar.component.js";
 import "/node_modules/bootstrap/dist/css/bootstrap.css";
 import "./app/styles/style.css";
 
+customElements.define("my-navbar", NavbarComponent);
+
 const outlet = document.querySelector("#content-outlet");
   const router = new Router(outlet);
   router
@@ -27,4 +29,4 @@ const outlet = document.querySelector("#content-outlet");
       component: ScoreComponent,
     });       
 
-    customElements.define("my-navbar", NavbarComponent);
+    
