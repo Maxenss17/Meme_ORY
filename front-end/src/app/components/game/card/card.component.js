@@ -32,14 +32,12 @@ let CARDS_IMAGE = [
 
 export class CardComponent extends Component {
     constructor(id) {
-    // TODO #extends: call super(CARD_TEMPLATE)
-    // is this card flipped?
+
     super(CARD_TEMPLATE)
     this.id = id;
     this._flipped = false;
     this.template = CARD_TEMPLATE;
 
-    // has the matching card has been discovered already?
     this.matched = false;
 
     this._elt = document.createElement("div");
@@ -53,31 +51,21 @@ export class CardComponent extends Component {
     this._imageElt.querySelector("img.back-face").src = CARDS_IMAGE[0];
   }
 
-
-  /* method CardComponent.getElement */
   getElement() {
     return this._elt;
 };
 
-  // TODO #class: turn function into a method of CardComponent
-  /* method CardComponent.flip */
     flip() {
     this._imageElt.classList.toggle("flip");
     this._flipped = !this._flipped;
 };
 
-  // TODO #class: turn function into a method of CardComponent
-  /* method CardComponent.equals */
     equals(card) {
     this.card = card;
     return card._id === this._id;
 };
 
-  // TODO #class: turn function into a method of CardComponent
-  /* CardComponent.get flipped() */
-
     get flipped() {
       return this._flipped;
-
   } 
 }
