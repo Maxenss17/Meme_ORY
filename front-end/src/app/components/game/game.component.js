@@ -1,4 +1,3 @@
-// TODO #import-html: use ES default imports to import game.html as template
 
 import { parseUrl } from "../../scripts/utils";
 import { Component } from "../../scripts/component";
@@ -6,8 +5,6 @@ import { Component } from "../../scripts/component";
 import { CardComponent } from "./card/card.component";
 import template from "./game.component.html";
 import "./game.component.css";
-
-// TODO #export-functions: remove the IIFE
 
   const environment = {
     api: {
