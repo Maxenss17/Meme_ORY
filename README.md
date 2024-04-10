@@ -1,6 +1,6 @@
 Question TP_Meme_Ory : 
 
-1 : Le fichier package-lock.json a pour but de vérouiller les versions des dépendances qui sont installés. Cela permet de garantir l'utilisation du programme dans le temps et sa réutilisation par un tier. 
+1 : Le fichier package-lock.json a pour but de vérouiller les versions des dépendances qui sont installéegit s. Cela permet de garantir l'utilisation du programme dans le temps et sa réutilisation par un tier. 
 
 2 : C'est une version sémantique.
 
@@ -34,5 +34,5 @@ Question TP_Meme_Ory :
 
 17 : ".then()" est utilisé avec les Promises pour gérer les résultats de manière asynchrone, tandis que async/await est une syntaxe qui rend l'écriture de code asynchrone plus lisible et plus propre en utilisant des Promises.
 
-18 : Le préfice "_" sur un fichier Sass indique qu'il s'agit d'un fichier partiel, qui n'est pas destiné à être compilé séparément. 
+18 : Le préfixe "_" sur un fichier Sass indique qu'il s'agit d'un fichier partiel, qui n'est pas destiné à être compilé séparément. 
 
